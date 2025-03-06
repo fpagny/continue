@@ -95,4 +95,16 @@ export const PROVIDER_TOOL_SUPPORT: Record<
       return true;
     }
   },
+  scaleway: (model) => {
+    // https://www.scaleway.com/en/docs/generative-apis/how-to/use-function-calling/
+    if (
+      [
+        "llama3",
+        "qwen2",
+        "mistral",
+      ].some((part) => model.toLowerCase().includes(part))
+    ) {
+      return true;
+    }
+  },
 };
